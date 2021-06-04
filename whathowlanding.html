@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Emerald's Meme Server</title>
+    <script>
+      function submit() {
+        const image = document.getElementById("imageURL");
+        if (image.vale != "") {
+          window.location = `${window.location}?image=${image.value}`;
+        } else {
+          console.log("no URL found");
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: slategrey;
+      }
+      .everything {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-content: center;
+      }
+      .centered {
+        margin-top: -100pt;
+        margin-left: auto;
+        margin-right: auto;
+        align-self: center;
+        text-align: center;
+        background-color: darkslateblue;
+        padding: 50pt;
+        border-radius: 40pt;
+      }
+      .form {
+        align-items: center;
+        margin-top: 30pt;
+      }
+      span {
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-weight: bold;
+        text-align: center;
+      }
+      input {
+        margin-right: 5pt;
+        border-radius: 5pt;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="everything">
+      <div class="centered">
+        <span id="prompt">ENTER AN IMAGE URL TO WHATHOW-IFY</span>
+        <div class="form">
+          <input type="text" id="imageURL" /><button
+            id="submit"
+            onclick="submit()"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -28,8 +28,13 @@ class MemeServer(BaseHTTPRequestHandler):
         parsed_path = urlparse(self.path)
         print(parsed_path.path)
         if parsed_path.path == "/whathow":
-            print("Branching to whathow")
             q_parts = parse_qs(parsed_path.query)
+            if not 'image' in q_parts.keys():
+                self.send_response(200)
+                self.send_header("Content-type", "text/html")
+                self.end_headers()
+                self.wfile.write(load_bin("./whathowlanding.html"))
+                return
             req = Request(q_parts['image'][0], headers={'User-Agent': 'Mozilla/5.0'})
             img_path = f'./tmp/image_{datetime.now().microsecond}'
             with open(img_path, mode='xb') as image:
