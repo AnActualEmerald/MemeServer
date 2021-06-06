@@ -10,9 +10,9 @@ def gen_video(image_path):
         "./res/whathowsound.mp4").subclip(20, 30.15)
 
     # Generate text --- THIS DOESN'T WORK WITH SOME VERSIONS OF IMAGEMAGICK ---
-    what_txt = TextClip(txt="WHAT", font="Bitstream-Vera-Serif-Bold", color="white",
+    what_txt = TextClip(txt="WHAT", font="NimbusSans-Bold", color="white",
         kerning=2, align='north', fontsize=50).set_duration(snd_clip.duration)
-    how_txt = TextClip(txt="HOW", font="Bitstream-Vera-Serif", color="white",
+    how_txt = TextClip(txt="HOW", font="NimbusSans-Regular", color="white",
         kerning=2, align='north', fontsize=24).set_duration(snd_clip.duration)
 
     # Load image
