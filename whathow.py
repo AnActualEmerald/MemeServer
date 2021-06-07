@@ -1,5 +1,6 @@
 from datetime import datetime
 from moviepy.editor import *
+import math
 
 
 def gen_video(image_path):
@@ -25,7 +26,7 @@ def gen_video(image_path):
     scale = scale_x if scale_x < scale_y else scale_y
     print(f"Original res is {img_clip.size}, scaling by {scale}")
 
-    final_scale = 0.5 if scale <= 1.0 else scale - scale.__floor__()
+    final_scale = 0.5 if scale <= 1.0 else scale - math.floor(scale)
 
     big_clip = img_clip.resize(scale)
     tmp = big_clip.resize(final_scale)
